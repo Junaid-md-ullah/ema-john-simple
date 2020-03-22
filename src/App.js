@@ -12,10 +12,16 @@ import {
   Link
 } from "react-router-dom";
 import ProductDetail from './components/ProductDetail/ProductDetail';
+import Login from './components/Login/Login';
+import { createContext } from 'react';
+
+ export const UserContext=createContext();
 
 function App() {
+  const user={name:'kodumia',email:'kodu@chodu.com'}
   return (
     <div>
+      <UserContext.Provider value={user.name}>  
       <Header></Header>
         <Router>
           <Switch>
@@ -34,13 +40,16 @@ function App() {
             <Route path="/product/:productKey">
               <ProductDetail></ProductDetail>
             </Route>
+            <Route path="/login">
+              <Login></Login>
+            </Route>
             <Route path="*">
               <NoMatch/>
             </Route>
           </Switch>
         </Router>
         
-        
+        </UserContext.Provider>
         
     </div>
   );
