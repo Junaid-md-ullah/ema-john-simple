@@ -9,7 +9,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import ProductDetail from './components/ProductDetail/ProductDetail';
 import Login from './components/Login/Login';
